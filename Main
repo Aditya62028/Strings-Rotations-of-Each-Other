@@ -1,0 +1,27 @@
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+class GFG{
+    public static void main(String[] args) throws IOException{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int t = Integer.parseInt(br.readLine());
+        while (t-- > 0) {
+            String s1 = br.readLine();
+            String s2 = br.readLine();
+            Solution obj = new Solution();
+            if (obj.areRotations(s1, s2)){
+                System.out.println("true");
+            } else{
+                System.out.println("false");
+            }
+        }
+    }
+}
+class Solution {
+    public static boolean areRotations(String s1, String s2){
+        StringBuilder sb=new StringBuilder();
+        sb.append(s1);
+        sb.append(s1);
+        return sb.lastIndexOf(s2) >=0;
+    }
+}
